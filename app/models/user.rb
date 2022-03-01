@@ -16,6 +16,7 @@ class User < ApplicationRecord
   #source:followedはリレーションシップモデルのbelongsと対応付。
   has_many :followers, through: :reverse_of_relationships, source: :follower
 
+  
   def follow(user_id)
     relationships.create(followed_id: user_id)
   end
